@@ -16,14 +16,22 @@
 //
 //  Output: "my name is Ellie Jon I am 67 YO, and I love Gaming and Sleeping."
 
-//  Note that:
+//  Note that:9
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
 const objLat = (obj) => {
     // write your code here
-    return "my name is " + obj.firstName + " " + obj.lastName + " I am " + obj.age + " YO, and I love " + obj.hobby + ".";
-};
+    let name= obj.firstName.slice(1);
+    return "my name is " + obj.firstName.charAt(0).toUpperCase()+ name+ " " + obj.lastName + " I am " + obj.age + " YO, and I love " + obj.hobby + ".";}
+
+ 
+     
+ 
+
+
+
+;
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -89,11 +97,16 @@ const cvFormatter = (arr) => {
     // write your code here
     let a = new Array;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].firstName != null && arr[i].lastName != null && arr[i].yearsOfExperience > 1) {
+        if (arr[i].firstName != null && arr[i].lastName != null && arr[i].yearsOfExperience > 1 && arr[i].firstName!=arr[i].firstName.toUpperCase()) {
             a.push({ fullName: arr[i].firstName + " " + arr[i].lastName, tech: arr[i].tech });
         }
-        else if (arr[i].firstName != null && arr[i].lastName == null && arr[i].yearsOfExperience > 1) {
+        else if (arr[i].firstName != null && arr[i].lastName != null && arr[i].yearsOfExperience > 1 && arr[i].firstName == arr[i].firstName.toUpperCase()) {
+            a.push({ fullName: arr[i].firstName.toUpperCase() + " " + arr[i].lastName, tech: arr[i].tech });
+        }else if (arr[i].firstName != null && arr[i].lastName == null && arr[i].yearsOfExperience > 1 && arr[i].firstName!=arr[i].firstName.toUpperCase()) {
             a.push({ fullName: arr[i].firstName, tech: arr[i].tech });
+        }
+        else if (arr[i].firstName != null && arr[i].lastName == null && arr[i].yearsOfExperience > 1 && arr[i].firstName == arr[i].firstName.toUpperCase()) {
+            a.push({ fullName: arr[i].firstName.toUpperCase(), tech: arr[i].tech });
         }
  
     }
