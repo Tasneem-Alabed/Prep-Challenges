@@ -122,30 +122,21 @@ const roundDecimals = (arr) => {
 
 const employeesBonus = (arr) => {
     // write your code here
-    arr.forEach(myFunction);
-
+      
+     arr.forEach(myFunction);
     function myFunction(item , index, arr) {
     
-      if(arr[index].workHours < 9 ) {
-        arr[index].salary = arr[index].salary.replace('00$','50$');
+      if(arr[index].workHours >8 ) {
+         arr[index].salary =  arr[index].salary + "100" ; 
 
         
 
-    }else if(arr[index].workHours == 9 && arr[index].section=="Marketing"){
-        arr[index].salary = arr[index].salary.replace('5000$','5100$');
-         
-    }
+    }else  {
+        arr[index].salary = arr[index].salary+"50"; 
 
-    else if(arr[index].workHours == 9){
-        arr[index].salary = arr[index].salary.replace('3200$','3300$');
-         
     }
-    
-    
-    else if(arr[index].workHours == 10){
-        arr[index].salary = arr[index].salary.replace('500$','600$');
          
-    }
+     
     }
     return arr;
 
