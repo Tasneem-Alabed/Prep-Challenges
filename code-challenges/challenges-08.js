@@ -62,10 +62,10 @@ return customer;
 
 const getEntries = (obj) => {
   // write your code here
-  for(let key in obj){
+   
 
-  return Object.entries(obj)[key];
-  }
+  return Object.entries(obj).map(entry => entry[0] +": "+ entry[1]) ;
+ 
 };
 // -------------------------------------------------------------------------------------------------------
 
