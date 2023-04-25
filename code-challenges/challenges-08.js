@@ -62,9 +62,17 @@ return customer;
 
 const getEntries = (obj) => {
   // write your code here
+  let arr=[];
+  let x = -1;
+  for(let key in obj){
+   x=x+1;
+    arr.push(Object.keys(obj)[x]+": " +obj[key]);
    
+  }
 
-  return Object.entries(obj).map(entry => entry[0] +": "+ entry[1]) ;
+  return  arr;
+
+  // return Object.entries(obj).map(entry => entry[0] +": "+ entry[1]) ;
  
 };
 // -------------------------------------------------------------------------------------------------------
